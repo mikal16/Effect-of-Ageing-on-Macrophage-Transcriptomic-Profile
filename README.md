@@ -30,14 +30,16 @@ This repository includes:
 - GO and pathway enrichment  
 - Cross-species ageing marker analysis  
 
+The goal is to define how ageing remodels macrophage biology in both **mouse** and **human**, and identify conserved age-associated signatures.
+
 ---
 
 ## Key Objectives
 - Identify transcriptional changes associated with ageing in macrophages.  
-- Build ML models to classify age from transcriptomic profiles.  
+- Build ML models to classify age from transcriptomes.  
 - Compare ageing signatures between mouse and human.  
 - Detect conserved macrophage ageing markers.  
-- Produce reproducible plots, signatures, and reports.  
+- Produce publication-quality plots and reproducible analyses.  
 
 ---
 
@@ -45,26 +47,25 @@ This repository includes:
 
 ### Layer 1: Mouse (Tabula Muris Senis)
 Includes:
-- Scanpy-based QC + preprocessing  
-- Normalization, HVG selection  
-- PCA, UMAP, Leiden clustering  
-- Subtype annotation (AM, IM, monocytes)  
-- DEGs across age groups  
-- PLS-VIP regression  
-- Random Forest + Logistic Regression  
-- scVI / SCANVI latent ageing models  
-- Pathway enrichment  
-- Figures (UMAP, heatmap, volcano, matrixplot)  
+- Scanpy QC, filtering, normalization  
+- HVG selection, PCA, UMAP, Leiden clustering  
+- Macrophage subtype annotation (AM, IM, monocytes)  
+- Age-stratified DEGs  
+- PLS-VIP age-predictive genes  
+- Random Forest & Logistic Regression models  
+- scVI/SCANVI latent modelling  
+- GO/KEGG enrichment  
+- Comprehensive visualizations (volcano, heatmaps, UMAPs)  
 
 ### Layer 2: Human Lung (HCLA)
 Includes:
-- Human lung single-cell preprocessing  
+- Scanpy preprocessing  
 - Human macrophage subtype identification  
-- Age-stratified DEGs  
-- ML models trained on human data  
-- Mouse-to-human ortholog mapping  
-- Cross-species conserved ageing signatures  
-- Functional pathway analysis  
+- Age-based DEGs  
+- ML models on human data  
+- Mouse–human ortholog mapping  
+- Cross-species conserved ageing markers  
+- Pathway enrichment analyses  
 
 ---
 
@@ -72,20 +73,18 @@ Includes:
 
 | Category | Methods |
 |---------|---------|
-| Preprocessing | Scanpy QC, normalization, filtering |
+| Preprocessing | Scanpy QC, filtering, normalization |
 | Dimensionality Reduction | PCA, UMAP |
 | Clustering | Leiden |
 | Machine Learning | PLS-VIP, Random Forest, Logistic Regression |
 | Deep Models | scVI, SCANVI |
 | Differential Expression | Wilcoxon rank-sum |
-| Functional Analysis | GO, KEGG, enrichment analyses |
-| Visualization | UMAP, volcano, heatmap, matrixplot |
+| Functional Analysis | GO, KEGG |
+| Visualization | UMAPs, heatmaps, volcano plots, matrixplots |
 
 ---
 
 ## Repository Structure
-
-The following reflects the recommended structure of this project:
 
 Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile/
 │
@@ -110,69 +109,103 @@ Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile/
 │
 └── README.md
 
-
+yaml
+Copy code
 
 ---
 
 ## Installation & Environment
 
-### Conda Installation
+### Using Conda
 ```bash
 conda create -n macrophage-ageing python=3.10
 conda activate macrophage-ageing
 pip install scanpy scvi-tools scikit-learn pandas numpy seaborn matplotlib anndata gseapy
 pip install torch torchvision torchaudio
-
-
-## How to Run the Pipelines
-
-### 1. Clone the repository
-    git clone https://github.com/<your-username>/Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile
-    cd Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile
-
-### 2. Add datasets
+How to Run the Pipelines
+1. Clone the repository
+bash
+Copy code
+git clone https://github.com/<your-username>/Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile
+cd Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile
+2. Add datasets
 Place all mouse and human data under:
 
-    data/
-        tabula-muris-senis/
-        hcla-lung/
+kotlin
+Copy code
+data/
+   tabula-muris-senis/
+   hcla-lung/
+3. Launch Jupyter
+bash
+Copy code
+jupyter lab
+4. Run notebooks
+Execute notebooks in:
 
-### 3. Launch Jupyter
-    jupyter lab
+mouse_tabula_muris/
 
-### 4. Run notebooks
-Execute the notebooks located in:
+human_hcla/
 
-- mouse_tabula_muris/
-- human_hcla/
+Results & Outputs
+Mouse Layer
+Age-stratified DEGs
+
+PLS-VIP age-predictive signatures
+
+Random Forest importance scores
+
+scVI latent embeddings
+
+UMAP visualizations
+
+Volcano plots & heatmaps
+
+GO/KEGG enrichment outputs
+
+Human Layer
+Human macrophage ageing markers
+
+ML performance metrics
+
+Ortholog mapping
+
+Conserved ageing signatures
+
+Pathway-level ageing shifts
+
+Citations
+Tabula Muris Senis
+Tabula Muris Consortium, Nature, 2020.
+
+Human Cell Landscape (HCL/HCLA)
+HCL Consortium, Nature, 2021.
+
+License
+This project is released under the MIT License.
+
+yaml
+Copy code
 
 ---
 
-## Results & Outputs
+If you want, I can also:
 
-### Mouse Layer
-- Age-stratified DEGs
-- PLS-VIP age-predictive signatures
-- Random Forest feature importance
-- scVI latent embeddings
-- UMAP visualizations
-- Volcano plots and heatmaps
-- GO/KEGG enrichment outputs
+✅ Add badges (Python version, license, stars)  
+✅ Add a banner graphic  
+✅ Add a graphical abstract  
+✅ Add a “Getting Started” quickstart section  
 
-### Human Layer
-- Human macrophage ageing markers
-- Machine learning performance metrics
-- Mouse–human ortholog mapping
-- Conserved ageing signatures
-- Pathway-level ageing shifts
+Just tell me!
 
----
 
-## Citations
 
-**Tabula Muris Senis**  
-Tabula Muris Consortium, *Nature*, 2020.
 
-**Human Cell Landscape (HCL/HCLA)**  
-HCL Consortium, *Nature*, 2021.
 
+
+
+
+
+
+
+ChatGPT can make mistakes. Check important info. See Cookie Preferences.
