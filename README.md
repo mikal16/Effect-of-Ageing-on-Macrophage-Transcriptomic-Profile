@@ -23,48 +23,48 @@ Cross-species computational analysis of ageing in lung macrophages using mouse (
 Ageing alters immune function and cellular identity. This project analyzes how ageing affects **lung macrophage transcriptomes** across species, focusing on alveolar macrophages, interstitial macrophages, and monocyte subsets.
 
 This repository includes:
-- Full single-cell RNA-seq preprocessing pipelines  
+- Single-cell RNA-seq preprocessing  
 - Age-stratified differential expression  
 - Machine learning models (PLS-VIP, Random Forest, Logistic Regression)  
 - Deep generative modelling (scVI/SCANVI)  
-- Pathway and GO analysis  
-- Cross-species conserved ageing marker discovery  
+- GO and pathway enrichment  
+- Cross-species ageing marker analysis  
 
 ---
 
 ## Key Objectives
-- Identify age-associated transcriptional changes in mouse and human macrophages.
-- Build machine learning models to predict age from gene expression.
-- Compare ageing trajectories across species.
-- Generate high-quality figures and reproducible analyses.
+- Identify transcriptional changes associated with ageing in macrophages.  
+- Build ML models to classify age from transcriptomic profiles.  
+- Compare ageing signatures between mouse and human.  
+- Detect conserved macrophage ageing markers.  
+- Produce reproducible plots, signatures, and reports.  
 
 ---
 
 ## Dataset Layers
 
 ### Layer 1: Mouse (Tabula Muris Senis)
-This layer uses the Tabula Muris Senis FACS + droplet datasets for murine lung macrophage ageing analysis.
-
 Includes:
-- Scanpy QC, filtering, normalization  
+- Scanpy-based QC + preprocessing  
+- Normalization, HVG selection  
 - PCA, UMAP, Leiden clustering  
-- Macrophage subtype annotation  
-- Age-stratified differential expression  
-- PLS-VIP age-predictive genes  
-- Random Forest + Logistic Regression models  
-- scVI/SCANVI latent embeddings  
-- Pathway enrichment and visualization  
+- Subtype annotation (AM, IM, monocytes)  
+- DEGs across age groups  
+- PLS-VIP regression  
+- Random Forest + Logistic Regression  
+- scVI / SCANVI latent ageing models  
+- Pathway enrichment  
+- Figures (UMAP, heatmap, volcano, matrixplot)  
 
 ### Layer 2: Human Lung (HCLA)
-This layer analyzes human lung macrophages using Human Cell Landscape (HCLA) datasets.
-
 Includes:
-- Scanpy pipeline for human lung  
-- Macrophage subtype identification  
-- Human ageing DEGs  
-- ML models applied to human data  
-- Human–mouse ortholog mapping  
-- Cross-species signature comparison  
+- Human lung single-cell preprocessing  
+- Human macrophage subtype identification  
+- Age-stratified DEGs  
+- ML models trained on human data  
+- Mouse-to-human ortholog mapping  
+- Cross-species conserved ageing signatures  
+- Functional pathway analysis  
 
 ---
 
@@ -72,16 +72,20 @@ Includes:
 
 | Category | Methods |
 |---------|---------|
-| Preprocessing | QC, filtering, normalization (Scanpy) |
+| Preprocessing | Scanpy QC, normalization, filtering |
 | Dimensionality Reduction | PCA, UMAP |
 | Clustering | Leiden |
 | Machine Learning | PLS-VIP, Random Forest, Logistic Regression |
-| Latent Modelling | scVI, SCANVI |
+| Deep Models | scVI, SCANVI |
 | Differential Expression | Wilcoxon rank-sum |
-| Functional Analysis | GO, KEGG, pathway enrichment |
-| Visualization | UMAPs, heatmaps, volcano plots, matrixplots |
+| Functional Analysis | GO, KEGG, enrichment analyses |
+| Visualization | UMAP, volcano, heatmap, matrixplot |
 
 ---
 
 ## Repository Structure
+
+The following reflects the recommended structure of this project:
+
+
 
