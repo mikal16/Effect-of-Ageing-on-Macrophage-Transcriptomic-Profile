@@ -87,5 +87,93 @@ Includes:
 
 The following reflects the recommended structure of this project:
 
+Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile/
+│
+├── mouse_tabula_muris/
+│ ├── Lung_Macrophages_Scanpy_General_Pipeline.ipynb
+│ ├── PLS-Tabula-Muris-Pipeline.ipynb
+│ ├── PLS-Tabula-Muris-RandomForest.ipynb
+│ ├── Tabula-Muris-PLS-RF-LogRegr-Model.ipynb
+│ ├── unagi-pipeline-working-copy.ipynb
+│ └── sccellfie-metabolite-analysis.ipynb
+│
+├── human_hcla/
+│ ├── HCLA-Lung-Scanpy-Pipeline.ipynb
+│ ├── HCLA-PLS-RF-LogisticRegression.ipynb
+│ └── Cross-Species-Analysis.ipynb
+│
+├── results/
+│ ├── PLS_VIP_gene_lists/
+│ ├── RandomForest_feature_importance/
+│ ├── DEG_results/
+│ └── figures/
+│
+└── README.md
+
+
+
+---
+
+## Installation & Environment
+
+### Conda Installation
+```bash
+conda create -n macrophage-ageing python=3.10
+conda activate macrophage-ageing
+pip install scanpy scvi-tools scikit-learn pandas numpy seaborn matplotlib anndata gseapy
+pip install torch torchvision torchaudio
+
+
+## How to Run the Pipelines
+
+### 1. Clone the repository
+    git clone https://github.com/<your-username>/Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile
+    cd Effect-of-Ageing-on-Macrophage-Transcriptomic-Profile
+
+### 2. Add datasets
+Place all mouse and human data under:
+
+    data/
+        tabula-muris-senis/
+        hcla-lung/
+
+### 3. Launch Jupyter
+    jupyter lab
+
+### 4. Run notebooks
+Execute the notebooks located in:
+
+- mouse_tabula_muris/
+- human_hcla/
+
+---
+
+## Results & Outputs
+
+### Mouse Layer
+- Age-stratified DEGs
+- PLS-VIP age-predictive signatures
+- Random Forest feature importance
+- scVI latent embeddings
+- UMAP visualizations
+- Volcano plots and heatmaps
+- GO/KEGG enrichment outputs
+
+### Human Layer
+- Human macrophage ageing markers
+- Machine learning performance metrics
+- Mouse–human ortholog mapping
+- Conserved ageing signatures
+- Pathway-level ageing shifts
+
+---
+
+## Citations
+
+**Tabula Muris Senis**  
+Tabula Muris Consortium, *Nature*, 2020.
+
+**Human Cell Landscape (HCL/HCLA)**  
+HCL Consortium, *Nature*, 2021.
 
 
